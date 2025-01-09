@@ -17,7 +17,7 @@ SensorNetworks-25/
 ├── json_sender.py
 ├── sensor_data.json
 └── serial_port_read.py
-
+```
 📁 Directory Details
   NodeCode/:
   Node1/: Code for a sensor node equipped with an MQ135 sensor. This code is reused for other nodes with minor modifications (e.g., unique node identifiers).
