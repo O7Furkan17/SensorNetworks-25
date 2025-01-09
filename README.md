@@ -1,4 +1,3 @@
-```markdown
 # 🌐 SensorNetworks-25
 
 This project implements a **star topology wireless sensor network (WSN)** using multiple Arduino-based nodes equipped with **MQ135 air quality sensors**. The system collects air quality data from various locations and visualizes it on a real-time map through a web interface.
@@ -133,6 +132,3 @@ This project is licensed under the **MIT License**.
 
 ### 🖥️ System Architecture
 ![System Architecture](https://via.placeholder.com/800x400?text=System+Architecture+Diagram)
-```
-
-
