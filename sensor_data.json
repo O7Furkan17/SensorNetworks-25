@@ -1,0 +1,37 @@
+[
+    {
+        "sensor_ID": "Node08",
+        "sensor_type": "MQ2",
+        "airQuality": 301
+    },
+    {
+        "sensor_ID": "Node04",
+        "sensor_type": "MQ4",
+        "airQuality": 27
+    },
+    {
+        "sensor_ID": "Node05",
+        "sensor_type": "DHT11",
+        "airQuality": 19
+    },
+    {
+        "sensor_ID": "Node02",
+        "sensor_type": "MQ135",
+        "airQuality": 342
+    },
+    {
+        "sensor_ID": "Node06",
+        "sensor_type": "LDR",
+        "airQuality": 319
+    },
+    {
+        "sensor_ID": "Node07",
+        "sensor_type": "DHT11Nem",
+        "airQuality": 39
+    },
+    {
+        "sensor_ID": "Node03",
+        "sensor_type": "MQ135",
+        "airQuality": 189
+    }
+]
