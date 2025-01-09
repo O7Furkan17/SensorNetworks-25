@@ -128,7 +128,34 @@ This project is licensed under the **MIT License**.
 </p>
 
 ### 🌍 Real-Time Map Interface
-![Real-Time Map](https://via.placeholder.com/800x400?text=Real-Time+Map+Example)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9a154513-18d4-43e9-b6a4-3774bd74a330" width="800"/>
+</p>
+---
 ### 🖥️ System Architecture
-![System Architecture](https://via.placeholder.com/800x400?text=System+Architecture+Diagram)
+
+```plaintext
+         +-----------+      +-----------+
+         |  Node #1  | ---> |           |
+         +-----------+      |           |
+                            |           |
+         +-----------+      |           |
+         |  Node #2  | ---> |  Sink     |  (Arduino + nRF24L01+PA)
+         +-----------+      |  Node     |
+                            |           |
+         +-----------+      |           |
+         |  Node #3  | ---> |           |
+         +-----------+      +-----------+
+                                  |
+                                  | Serial
+                                  v
+                          +----------------+
+                          |    Flask App   |
+                          | (Python Server)|
+                          +----------------+
+                                    |
+                            Visualization
+                              (Leaflet &
+                             heatmap.js)
+```
+---
