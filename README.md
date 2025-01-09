@@ -75,5 +75,6 @@ Use json_sender.py to send sample data without hardware:
 5️⃣ Real Hardware Data
 Use serial_port_read.py to read data from the sink node via serial communication and forward it to the Flask application.
 
-When the Python files are executed, the data from the sensor is instantly captured, and the values are transmitted to the user and mapped accordingly.
-![Ekran görüntüsü 2025-01-09 142759](https://github.com/user-attachments/assets/4c0133e5-0852-499b-b00a-78628e119f8b)
+👩🏽‍💻 When the Python files are executed, the data from the sensor is instantly captured, and the values are transmitted to the user and mapped accordingly.
+<img src="https://github.com/user-attachments/assets/4c0133e5-0852-499b-b00a-78628e119f8b" width="400"/>
+
