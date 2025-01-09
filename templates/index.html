@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Air Quality Map</title>
+    <link rel="stylesheet" href="/static/leaflet.css">
+    <script src="/static/leaflet.js"></script>
+    <script src="/static/heatmap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Real-Time Air Quality Map</h1>
+    <div id="map"></div>
+
+    <script>
+    const socket = io();
+
+    const map = L.map('map').setView([38.6727845848306, 39.18903059797405], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([38.6727845848306, 39.18903059797405], {
+            icon: L.icon({
+                iconUrl: '/static/technology.png',  // Yerel ikon dosyasını kullan
+                iconSize: [40, 40],  // İkonun boyutu
+                iconAnchor: [20, 40],  // İkonun haritadaki konumu
+                popupAnchor: [0, -40]  // Popup'ın konumu
+            })
+        }).addTo(map).bindPopup("<b>Sink Node:</b> Fırat Üniversitesi Bilgisayar Mühendisliği");
+
+    const markers = {}; 
+
+    socket.on('update_map', function (data) {
+        console.log("Yeni veri alındı:", data);
+
+        const { sensor_ID, sensor_type, latitude, longitude, value } = data;
+
+        if (markers[sensor_ID]) {
+            map.removeLayer(markers[sensor_ID]);
+        }
+
+        const color = value <= 50 ? "green" :
+                      value <= 100 ? "yellow" :
+                      value <= 150 ? "orange" :
+                      value <= 200 ? "red" :
+                      value <= 300 ? "purple" : "darkred";
+
+        markers[sensor_ID] = L.circleMarker([latitude, longitude], {
+            color: color,
+            radius: 17
+        }).addTo(map).bindPopup(`
+            <b>Sensor ID:</b> ${sensor_ID}<br>
+            <b>Sensor Type:</b> ${sensor_type}<br>
+            <b>Air Quality:</b> ${value}
+        `);
+    });
+    </script>
+
+</body>
+</html>
