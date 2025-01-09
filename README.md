@@ -98,27 +98,17 @@ This system is designed to monitor air quality across multiple locations using *
 
 ---
 
-## 🖼️ Visualization
+## 🌍 Visualization
 
 The web interface provides a real-time map visualization of air quality metrics. The markers on the map show:
 - **Sensor ID**: The unique identifier of the node.
 - **Sensor Type**: Type of the air quality sensor (e.g., MQ135).
 - **Air Quality Value**: The measured air quality index (AQI).
+ 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9a154513-18d4-43e9-b6a4-3774bd74a330" width="800"/>
+</p>
 
-### Example Real-Time Map:
-![Real-Time Map Example](static/technology.png)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork this repository, improve the code or documentation, and submit a pull request.
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
@@ -127,11 +117,6 @@ This project is licensed under the **MIT License**.
   <img src="https://github.com/user-attachments/assets/4c0133e5-0852-499b-b00a-78628e119f8b" width="800"/>
 </p>
 
-### 🌍 Real-Time Map Interface
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/9a154513-18d4-43e9-b6a4-3774bd74a330" width="800"/>
-</p>
----
 ### 🖥️ System Architecture
 
 ```plaintext
@@ -158,4 +143,7 @@ This project is licensed under the **MIT License**.
                               (Leaflet &
                              heatmap.js)
 ```
----
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
